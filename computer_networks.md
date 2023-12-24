@@ -52,7 +52,8 @@ Data sending is achieved through a typical application data encapsulation proces
 
 **How does Data Reception works**
 It receives data unpacking data layer by layer starting from the Ethernet card. It's the process from above but in reverse.
-![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/1a116617-1f1a-4256-81a6-5ff57a572063)
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/eb867ec2-233e-48d3-a53e-b4c3e4c3754b)
+
 
 ****
 ## Core Protocols
