@@ -53,9 +53,69 @@ Data sending is achieved through a typical application data encapsulation proces
 **How does Data Reception works**
 It receives data unpacking data layer by layer starting from the Ethernet card. It's the process from above but in reverse.
 
-![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/1a116617-1f1a-4256-81a6-5ff57a572063)
-
 ****
+## Core Protocols
+**Computer network protocols**
+In a computer network, various specifications or protocols must be used to ensure secure, stable, and efficient running of the network. These protocols include the following types:
+
+- **Network node identification protocol**: It is used to identify network nodes. Some examples are MAC, IPv4, IPv6 and RFID.
+- **Network data transmission protocol**: It is used to ensure that network node data reaches the target node correctly. It includes HDLC, TCP, and UDP.
+- **Network link contention protocol**: It is used to ensure that each network node has an opportunity to transmit data using a network link. It includes CSMA and Token.
+- **Network resource sharing protocol**: It is used to ensure that different organizations and individuals can share information. It includes HTTP, FTP, and SMTP.
+
+**Network node identity protocol**
+- A **LAN** uses a network hardware address or a MAC address to uniquely identify each network node.
+- A **WAN** that is formed by multiple interconnected LANs use a logical address, or an IP address to uniquely identify each network node
+
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/8205de86-c3ca-4f9f-9ab6-6c896d825543)
+
+
+**MAC address**
+To ensure that each node in a LAN can be uniquely identified, the IEEE stipulates that each node must have a unique network label. That's the MAC address
+> 💡 It is also called the LAN address, physical address, etc.
+
+It is used to identify the identity or location of a network node. It's written into the hardware by a network device manufacturer during production. A MAC address is inside a NIC.
+
+- A MAC address consists of 48 bits. 6 bytes that are each separated by "." or "-". *EX: 08-00-20-0A-8c-6D*
+- A MAC address cannot be replaced (*Theoretically*) unless you replace the network adapter.
+- The LAN uses MAC addresses to identify specific users.
+
+> **How to identify the MAC address?**
+> Control Panel > Network > Local Area Connection Status > Details.
+
+**IP Address**
+In order to shield the differences between LANs, and in order to implement interconnection and interworking between different physical networks. IP address is an addressing method for allocating a unique address to each host on each subnet on the Internet.
+
+- An IP address consists of 32-bit binary number, which is usually divided into four bytes. *EX: 192.168.85.17*
+
+They are classified into five types:
+- **Class A, Class B, Class C, Class D and Class E**
+- **Class D** are used for multicast
+- **Class E** are reserved for future use
+- Only the three first IP addresses can be allocated
+- **Class A:** They are used in large-scale regional networks. It supports a maximum of 2^24 hosts
+- **Class B:** They are used for large-scale organizations and companies. It supports a maximum of 65534 hosts.
+- **Class C:**  They are used for small organizations and  companies. It supports a maximum of 254 hosts.
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/49dfbaca-78ec-4c48-aff1-a2a709d83ec4)
+
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/9a7ac743-ef88-4428-8d29-6e1d4a09981b)
+
+
+
+> **There are some rules for IP addresses by the Network Information Center**
+> - An IP address with all 32 bits is set to 1 is a broadcast address..
+> - An IP address with all 32 bits set to 0 is the network itself.
+> - The eight most significant bits are 01111111 indicating the loopback address, which is used for network software test and communication between local processes. The most common one is (127.0.0.1)
+
+**Differences betwen IP address and MAC address**
+|                       **IP address**                      |                       **MAC address**                       |
+|:---------------------------------------------------------:|:-----------------------------------------------------------:|
+|                     It can be changed                     |                     It cannot be changed                    |
+|                      Length: 32 bits                      |                       Length: 48 bits                       |
+| They are used at Layer 3 of the OSI model (Network layer) | They are used at Layer 2 of the OSI model (Data link layer) |
+
+
+
 
 
 
