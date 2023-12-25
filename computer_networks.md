@@ -122,8 +122,8 @@ They are classified into five types:
 **HDCL Protocol**
 It's called the *High-Level Data Link Control*. It's a bit-oriented data link control protocol which does not depend on any character set or code set. 
 It supports two transmissions:
-- **Synchronous transmission:** Data is transmitted in bytes, and additional start and stop bits are used to mark the start and end of each byte. Data signals are transmitted in a fixed clock cycle
-- **Asynchronous transmission:** *You are not going to use it*
+- **Asynchronous transmission:** Data is transmitted in bytes, and additional start and stop bits are used to mark the start and end of each byte.
+- **Synchronous transmission:** Data signals are transmitted in a fixed clock cycle
 
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/a01371e9-14b2-4649-9907-b7c222821dc3)
 
@@ -140,4 +140,49 @@ Its structure goes like this:
 
 **How does Zero-Bit Insertion works**
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/e9b2e5de-f66c-4388-b9c9-4a6d470f6744)
+### TCP/IP Protocol (1)
+It refers to the *Transmission Control Protocol* and the *Internet Protocol*. It's a connection-oriented, reliable and byte stream based transport layer communication protocol which is applicable to multiple network applications. It is network independent because it limits the packet length (A packet must be less than 64kb, if it is bigger, it needs to be fragmented).
+
+- It enables communication between two processes but does not support BUM
+
+**IP**
+It includes three aspects:
+- IP addressing scheme
+- Packet encapsulation format
+- Packet forwarding rule
+
+**Fields in a TCP/IP Packet**
+(Imagen)
+
+- **First row:** It's used to identify the application processes at both ends of the connection
+- **Second row:** It's the number of each sent byte rather than the number of each TCP packet.
+- **Third row:** It indicates the sequence number of the next byte to be received in the attached response mode. In this way, the peer end is informed that the bytes before the sequence number have been received correctly.
+- **Fourth row:** Size of the TCP header - Describes the purpose and content of the TCP field (URG, ACK, PSH, RST, SYN and FIN). - Window is used to control the amount of data that can be sent by the peer end.
+- **Fifth row:** It checks the TCP header data - It indicates the position of urgent data in the window. Data marked as urgent should be transmitted prior to other data.
+- **Sixth row:** It indicates the maximum segment size, or MSS option, which can be used only during connection establishment - The padding is used to ensure that the length of options is an integer multiple of 32 bits.
+
+**How does TCP/IP works**
+It works by connection establishment and release:
+- TCP Connection Setup.
+- TCP Connection Release.
+
+**TCP Connection process**
+>💡 The arrows are indicating the handshakes in order, being three in total
+
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/9aeb5e68-064f-48a3-a7c7-774be281728c)
+
+
+**TCP Control Traffic**
+- TCP flow control is used to overcome mismatches between the processing capabilites of the sender and receiver.
+- The simplest traffic control solution is that the receiver notifies the sender of its processing capabilites, and then the sender sends packets accordingly.
+- The window size field in a TCP packet is used to exchange the size of the receive window between the sender and receiver. This is because sometimes the receiver may have a slow cache, etc.
+
+> 💡 **Congestion:** It refers to transmission of too many packets in a communication subnet leading to the noticeable deterioration of network transmission performance
+
+> 💡 In order to solve that, TCP/IP uses the fast retransmit and recovery algorithm for avoiding losing packets when the network is working at his fullest.
+
+
+
+
+
 
