@@ -152,7 +152,9 @@ It includes three aspects:
 - Packet forwarding rule
 
 **Fields in a TCP/IP Packet**
-(Imagen)
+
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/e1d6061e-1375-44a3-8fa6-ec7f8a527024)
+
 
 - **First row:** It's used to identify the application processes at both ends of the connection
 - **Second row:** It's the number of each sent byte rather than the number of each TCP packet.
