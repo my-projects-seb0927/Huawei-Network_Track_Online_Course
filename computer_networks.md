@@ -116,9 +116,28 @@ They are classified into five types:
 |                      Length: 32 bits                      |                       Length: 48 bits                       |
 | They are used at Layer 3 of the OSI model (Network layer) | They are used at Layer 2 of the OSI model (Data link layer) |
 
+## Network Node Data Transmission Protocol
+
+### HDLC Protocol & Zero Bit Insertion Technology
+**HDCL Protocol**
+It's called the *High-Level Data Link Control*. It's a bit-oriented data link control protocol which does not depend on any character set or code set. 
+It supports two transmissions:
+- **Synchronous transmission:** Data is transmitted in bytes, and additional start and stop bits are used to mark the start and end of each byte. Data signals are transmitted in a fixed clock cycle
+- **Asynchronous transmission:** *You are not going to use it*
+
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/a01371e9-14b2-4649-9907-b7c222821dc3)
 
 
+Its structure goes like this:
+- **Flag field F:** Because the bit sequence of other information may be the same as that of the flags fields during transmission, the HDLC protocol introduces ***zero-bit insertion, which ensures the uniqueness of the flags field and the transparency of data transmission***.
+- **Address field A:** It specifies the address of the receiver. The address field is one byte by default and can be used to address a maximum of 254 hosts. It can also be extended to multiple bytes. An address field set to all 1s indicates that the address is a broadcast address. An address field set to all 0s is invalid. For Ethernet, the length of the address field in an HDLC frame is 6 bytes.
+- **Control field C:** It is used to indicate the frame type and specify various commands and response modes to monitor the link. The default length is 1 byte, but it can be extended to 2 bytes. For Ethernet, the length of the control field in an HDLC frame is 2 bytes.
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/9ecc0111-43b9-42bf-a80a-ab805e779095)
 
+	- The frames can be classified into three types: information frames, supervision frames, and unnumbered frames.
+- **Information field I:** It carries data packets from the network layer, that is, IP data packets. Its length is determined by the frame check sequence, or FCS field or the cache capacity of the communication node. The upper limit is 1000 to 2000 bits, and the lower limit is 0. That is, the information field of the supervision frame, called the S frame, can be 0. For Ethernet, the length of the information field ranges from 46 bytes to 1500 bytes
+- ** Frame check field FCS:** This field is used to detect errors between two flags fields. The default value is 2 bytes, but it can be extended to 4 bytes for Ethernet. The cyclic redundancy check or CRC technology is used to detect errors from the first bit of the address field to the last bit of the information field. CRC, also known as polynomial code, is the most widely used and effective error control code in data link communication between LANs and WANs
 
-
+**How does Zero-Bit Insertion works**
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/e9b2e5de-f66c-4388-b9c9-4a6d470f6744)
 
