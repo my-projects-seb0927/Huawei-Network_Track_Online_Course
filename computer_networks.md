@@ -236,6 +236,37 @@ It's a media access control (MAC) method for collision detection through carrier
 >💡 **Working process:**
 > Before sending data, a network node first monitors whether a channel has a carrier. If the channel has no carrier, that is, the channel is idle, the data transmission starts. 
 >![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/a3aeb0c1-382e-4639-8a91-133703da1d3d)
+## Network Resource Sharing Protocol
+**Summary of Network Resource Sharing Protocols:**
+| **Protocol Name** |    **Protocol Description**   | **Application Scenarios**                |
+|:-----------------:|:-----------------------------:|------------------------------------------|
+|        HTTP       | Hypertext Transfer            | Resource search                          |
+|        FTP        | File Transfer Protocol        | File upload and download                 |
+|        HTML       | Hyper Text Markup Language    | Web page making                          |
+|        SMTP       | Simple Mail Transfer Protocol | Email sending and inter-mailbox delivery |
+|        POP        | Post Office Protocol          | Email receiving                          |
+|       Telnet      | Remote login protocol         | Login to a remote host system            |
+
+### Resource Search Engine and Web Service Agreement
+**World Wide Web, WWW**
+It is a global, dynamic, interactive, and cross-platform distributed graphics information system based on the HTTP. The Web uses a new browser/server (B/S) model, which is an improvement of the client/server (C/S) model.
+
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/9d47f651-8dfe-4123-a81b-0db56693e270)
+
+**Resource request process for Web services**
+1. A user enters a domain name in the address bar of the browser.
+2. DNS is used to resolve the domain name to obtain the IP address of the domain name.
+3. Based on the IP address, a Web application server is located and a TCP three-way handshake connection is initiated.
+4. After a TCP connection is set up, and HTTP request packet is sent, such as the request packet.
+5. The server responds to the HTTP request, and the browser obtains the response packet that contains the HTML code
+6. The browser parses the returned HTML code, and then requests resources in the HTML code, such as JavaScript, CSS, and images. These resources are loaded for a second time
+7. The browser renders the HTML code and the requested resources, and then presents the resources to the user.
+8. The server releases the TCP connection
+
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/791778f8-63ac-464c-a656-032380f8efd9)
+
+
+
 
 
 
