@@ -265,9 +265,14 @@ It is a global, dynamic, interactive, and cross-platform distributed graphics in
 
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/791778f8-63ac-464c-a656-032380f8efd9)
 
+### Email Services
+**Model of an email service**
+In the email system, email senders and recipients are clients and use email proxies such as Hotmail and Foxmail to edit, send, and receive emails.
 
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/9921c79e-49e9-4944-8d98-18672a31d30f)
 
-
+**Typical Email Service Protocols**
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/04a6737a-1063-456b-ba8e-41db069c8c4c)
 
 
 
