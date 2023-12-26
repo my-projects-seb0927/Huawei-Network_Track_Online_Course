@@ -219,5 +219,25 @@ Some of them are: RIP, IGRP, EIGRP, OSPF, IS-IS and BGP
 
 >💡 A router uses a routing algorithm to find the optimal route to the destination. The routing algorithm is also called path selection algorithm. It aims to find the path with the lowest cost from the source router to the destination router. Some parameters are the hop count, the delay, and the communication time of the packet transmission.
 
+## Network Link Contention Protocol
+Most LANs adopt the bus structure. When a large number of network nodes share the same communication link or communication channel, ensuring fair allocation of the link or channel is the main problem that needs to be solved. Multi-access protocols, also called media access control (MAC) protocols, are commonly used to solve this problem. They can be divided into two types: *contention-based protocols* and *collision-free protocols*.
+
+- **Contention-based protocol:** Before sending data, a node does not need to coordinate the right of using a channel with another node. Instead, it sends the data as soon as the data is available. In this case, if multiple nodes send data at the same time, a collision occurs. Typical contention-based protocols include the CSMA/CD protocol.
+- **Collision-free protocol:** Each node completes the transmission process according to the specific arbitration policy, which avoids collisions in the data transmission process. A token protocol is a typical collision-free protocol. ***The basic idea is that a node must obtain a token (A special data frame) before sending data***. Examples of these are token buses and token rings.
+
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/675e8228-e710-4992-9d49-b872180ca47b)
+
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/6a9172ca-3ebe-4e72-bc48-3de213ced83c)
+
+
+**CSMA/CD protocol**
+It's a media access control (MAC) method for collision detection through carrier-sensing.
+
+>💡 **Working process:**
+> Before sending data, a network node first monitors whether a channel has a carrier. If the channel has no carrier, that is, the channel is idle, the data transmission starts. 
+>![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/a3aeb0c1-382e-4639-8a91-133703da1d3d)
+
+
+
 
 
