@@ -274,6 +274,31 @@ In the email system, email senders and recipients are clients and use email prox
 **Typical Email Service Protocols**
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/04a6737a-1063-456b-ba8e-41db069c8c4c)
 
+### IoT Concepts, Models, and Protocols
+**What is the Internet of things**
+- In 1998, MIT proposed a unique numbering scheme based on the radio frequency identification (RFID) technology, that is, the electronic product code (EPC).
+- In 1999, the MIT Auto-ID Lab first proposed the concept of IoT.
+- At that time, IoT was simply defined as an approach to the combine item coding, RFID, and Internet technologies to implement automatic identification and information sharing of items through the Internet.
+
+But the general definition goes like this: IoT serves as a network that enables information sensing devices such as radio frequency identification (RFID) devices, infrared devices, GPS devices and laser scanners to connect any item to the Internet for information exchange and communication based on agreed protocols
+
+**RFID**
+RFID is a non-contact fully automatic identification technology. Its basic principle is to implement non-contact transmission of object information using the transmission feature of an electromagnetic signal and space coupling. This allows a static or moving object or person to be automatically identified in a non-contact manner.
+
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/499edcac-8bc3-47dc-be39-0ae929f663af)
+
+- **RFID tag:** Each RFID tag has a globally unique electronic code. You can attach it to an object to uniquely identify the object. It can be read and modified in real time.
+- **RFID reader:** It is a device that uses the radio frequency (RF) technology to read and write electronic tag information
+
+**RFID Reading Protocol**
+>💡 The most popular in terms of secure, is the hash-based security authentication protocol which encrypts messages using the hash algorithm. 
+
+An RFID reader uses a three-way handshake authentication protocol in the reading process. This is the **RFID Reading Process:**
+1. The RFID reader sends information to the RFID tag. After receiving the information, the RFID tag can determine that its receiving function is normal.
+2. The RFID tag sends information to the RFID reader as a response. After receiving the information, the RFID reader can determine that its transmitting and receiving functions are normal.
+3. The RFID reader sends information to the RFID tag. After receiving the information, the RFID tag can determine that its transmitting function is normal
+
+By doing that, it's possible to determine that the established connection is reliable
 
 
 
