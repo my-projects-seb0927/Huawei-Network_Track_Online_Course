@@ -183,8 +183,41 @@ It works by connection establishment and release:
 
 > 💡 In order to solve that, TCP/IP uses the fast retransmit and recovery algorithm for avoiding losing packets when the network is working at his fullest.
 
+### TCP/IP Protocol (2)
+**IP** (Network layer) provides connectionless packet transmission and is responsible only for transmitting packets to the destination node. It does not perform authentication or send acknowledgments to confirm whether the transmission is correct, nor does it ensure the correct sequence of packets. The reliability is implemented by TCP (Transport layer)
+
+**Structure**
+It consists of:
+- **Packet header:** It stores the IP-specific control information
+- **Data area:** It contains upper-layer (TCP) data to be transmitted over IP.
+
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/2c0eb8ad-8044-4bb1-a933-0c698ed38ba6)
 
 
+ - **Version:** Whether the IP address is IPv4 or IPv6.
+ - **Header length:** It specifies the number of 32-bit words forming the header.
+ - **Service type:** IP packet priority.
+ - **Total length:** It indicates the total length of an IP packet, incluiding the header and the data area.
+ - **Identification:** It is used to identify an IP packet
+ - **Flags:** The DF bit is used to indicate whether the IP packet can be fragmented, and the MF bit is used to indicate whether there is a subsequent fragment, and the last one is reserved.
+ - **Offset:** It specifies the offset of a particular fragment relative to the beginning of the original IP packet. It's mandatory for fragment reassembly.
+ - **Time to live:** It indicates the maximum transmission distance of an IP packet on the network. It decreases by one each time the IP packet passes through a router.
+ - **Protocol:** The value is 6 for TCP and 17 for UDP.
+ - **Checksum:** It's used to ensure the integrity of the IP packet header.
+ - **Source IP address:** It indicates the IP address of the source host of the IP packet
+ - **Destination IP address:** It indicates the IP address of the target host that receives the IP packet
+ - **Options (variable length):** It's used for alignment
+ - **Padding (variable length)**
+ - **Payload**
+
+**IP Routing Protocol**
+On an IP network, routers select routes. By running certain routing protocols, a router searches for an optimal route to the destination host or network of an IP packet and forwards the packet.
+
+A routing protocol is a network protocol that specifies the packet forwarding mode. The router forwards the received data according to the routing table. The forwarding policy may be manually specified, for example, by using methods such as static routing and policy-based routing.
+
+Some of them are: RIP, IGRP, EIGRP, OSPF, IS-IS and BGP
+
+>💡 A router uses a routing algorithm to find the optimal route to the destination. The routing algorithm is also called path selection algorithm. It aims to find the path with the lowest cost from the source router to the destination router. Some parameters are the hop count, the delay, and the communication time of the packet transmission.
 
 
 
