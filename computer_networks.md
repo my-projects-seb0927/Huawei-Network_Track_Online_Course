@@ -47,7 +47,7 @@ The first three ones are grouped into the **Application Layer** and then we hace
 Data sending is achieved through a typical application data encapsulation process:
 1. The user data is encapsulated with the application layer header through the application layer protocol, resulting in the application data.
 2. The application data is encapsulated with a TCP header at the transport layer resulting in a packet **(Data segment)**.
-3. The packet is transmitted to the network layer and encapsulated with an IP header **(Data Packet(**.
+3. The packet is transmitted to the network layer and encapsulated with an IP header **(Data Packet)**.
 4. The encapsulated IP packet is transmitted to the data link layer which encapsulates it with a MAC header resulting in a **Data Frame** 
 5. The Data Frame is transmitted to the Ethernet card **(Data transmission process)**
 
@@ -326,6 +326,31 @@ There are three types of switches based on their positions on the network: *Acce
 - **Aggregation switch:** It aggregates traffic of multiple access switches between buildings. It must be able to process all traffic from access layer devices and provide uplinks to the core layer. Therefore, aggregation switches offer higher performance, fewer interfaces, and higher switching rates than access switches.
 - **Core switch:** It connects multiple aggregation switches to provide an optimized and reliable backbone transmission structure though high-speed forwarding communication. They have to have higher reliability, performance, and throughput.
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/af0defdd-ead9-49d9-b1e3-96d1c7c789ae)
+## Inter-network Interconnection Devices
+They include: Bridges, routers and gateways.
+**Bridge** 
+It's a device that implements network interconnection at the data link layer. It works at the MAC sub-layer of the Ethernet and functions as a storage and forwarding device based on data frames. It's used to combine two or more LANs that use the same communication protocol transmission media and addressing structure.
 
+It provides the addressing and path selection functions. It can detect the source and destination address of a data frame that enters the bridge.
+It can screen or filter:
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/5a50d554-45fb-477e-94bb-36614801c048)
 
+It can isolate the information that does not need to be transmitted between networks, greatly reducing the network load and improving the network performance. It also has the ***Network Management function*** that can monitors the status of the extended network to better adjust the network topology. It cannot identify or filter broadcast information.
+
+**Router**
+The main difference between routing and switching is that switching occurs at the data link (Layer 2) whereas routing occurs on the Network layer (Layer 3).
+
+A router functions as a hub of the Internet. It's used to connect LAN and WAN devices on the internet. It automatically selects and sets routes based on channel conditions and sends signals along the optimal path in sequence
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/a9387a10-517e-4de9-a208-cceb5e64b084)
+
+- **Wireless router:** It's a communication device used to connect wired and wireless networks using the wi-fi technology. It can be configured with a service set identifier **(SSID)**. The SSID is a case-sensitive character string of up to 32 bytes, it can be a physical location, a person name, a company name, etc.
+For protecting this routers, WPA, WPA2 and WPA3 are proposed.
+
+**Gateway**
+It's a computer system or device that functions as a conversion unit. It's a translator between two systems that use different communication protocols, data formats or languages, or even completely different architectures. It repackages the received information to meet the requirements of the destination system, and it can provide filtering and security functions.
+In a resume, they can:
+- Protocol conversion between networks.
+- Packet storage, forwarding, and flow control.
+- Application layer interworking and inter-network management.
+- Providing virtual circuit interfaces and corresponding services
 
