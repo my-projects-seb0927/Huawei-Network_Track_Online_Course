@@ -1,3 +1,4 @@
+
 # Huawei - Network Track Online Course
 
 ## Basics of Computer Network
@@ -299,6 +300,32 @@ An RFID reader uses a three-way handshake authentication protocol in the reading
 3. The RFID reader sends information to the RFID tag. After receiving the information, the RFID tag can determine that its transmitting function is normal
 
 By doing that, it's possible to determine that the established connection is reliable
+
+## Computer Network Equipment and Configuration Management
+To connect to devices on a LAN, a MAN, or a WAN, transmission media such as Ethernet cables or network interfaces (such as an RJ45) is generally used. These devices include intra-network (NICs, repeaters, hubs, and switches) and inter-network interconnection devices (Bridges, routers, and gateways).
+
+**Intra-network interconnection devices** 
+They include NICs, repeaters, hubs, and switches.
+
+- **NIC:** It's known as a network adapter, it connects a computer and a transmission medium to enable the computer to transmit data to another computer
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/59611d4d-8541-4df2-9547-b05dc6ff1f79)
+
+- **Network Transmission medium:** Typical network transmission media are twisted pairs (Star networks), coaxial cables (Bus networks) and optical cables (Backbone network connection).
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/14948f36-75f6-41a7-b2a8-64d12b4d12cf)
+
+- **Repeater and hub:** A repeater is the simplest device for interconnecting LANs. It works at the physical layer of the OSI model to connect different physical media and transmit data packets over them. ***A repeater is also called a Hub*** which has multiple ports. Each port of a hub is a repeater.
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/d6755a64-f330-4663-a52d-df3b52d796f6)
+
+- **Switch:** A switch is a device that exchanges information in a communication system. It can provide an exclusive electrical signal path for any two network nodes connected to the switch and transmit data between multiple ports at the same time. ***Each port can be regarded as an independent network segment.*** The network devices connected to the port can use all the bandwidth without competing with other devices. 
+There are three types of switches based on their positions on the network: *Access switches (Layer 1), Aggregation switches (Layer 2) and Core Switches (Layer 3)*.
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/1e592b41-c39b-4aba-a68f-30c19f806dc6)
+
+
+**Types of network Switches**
+- **Access switch:** Directly connect user terminals to the network. They are inexpensive and have a high port density. In therms of transmission speed, most access switches provide multiple ports of 10 Mbit/s, 100 Mbit/s, or 1000 Mbit/s with auto-negotiation.
+- **Aggregation switch:** It aggregates traffic of multiple access switches between buildings. It must be able to process all traffic from access layer devices and provide uplinks to the core layer. Therefore, aggregation switches offer higher performance, fewer interfaces, and higher switching rates than access switches.
+- **Core switch:** It connects multiple aggregation switches to provide an optimized and reliable backbone transmission structure though high-speed forwarding communication. They have to have higher reliability, performance, and throughput.
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/af0defdd-ead9-49d9-b1e3-96d1c7c789ae)
 
 
 
