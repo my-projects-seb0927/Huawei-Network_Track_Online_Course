@@ -1,4 +1,3 @@
-
 # Huawei - Network Track Online Course
 
 ## Basics of Computer Network
@@ -353,4 +352,50 @@ In a resume, they can:
 - Packet storage, forwarding, and flow control.
 - Application layer interworking and inter-network management.
 - Providing virtual circuit interfaces and corresponding services
+
+## Network Device Management and Configuration Methods
+
+**What is a network management**
+A network management is a network service that monitors, controls, and records:
+- The performance of network resources.
+- Usage of network resources.
+- Make the network work effectively.
+- Ensure services are of a certain quality.
+
+It involves:
+- The use, integration, and coordination of hardware.
+- Use of software and human resources to monitor, test, configure, analyze, asses and control network resources.
+
+Doing that, requirements of the network such as real-time running performance and service quality can be met at a reasonable cost.
+
+**Simple Network Management Protocol (SNMP)**
+It has become a *de facto* industry standard in the network management field and enjoys wide support and application. Most network managements systems and platforms use SNMP for management
+
+**Virtual Local Area Network (VLAN)**
+It's a logical segment for connecting network users to the ports of Layer 3 and Layer 2 switches, and ensures users are not restricted by their physical locations.
+They can be configured based on the user locations, functions, departments, or applications and protocols used by network users.
+It can be configured on a single switch or across switches. They are divided by two:
+- **Static VLAN:** It refers to a VLAN whose ID is statically bound to switch ports.
+- **Dynamic VLAN:** It refers to a VLAN that a switch automatically allocates to a host after it connects a port on the switch.
+
+**Dynamic VLAN**
+Dynamic VLANs can be configured on the following modes:
+- **MAC address-based VLAN:** The MAC addresses of all hosts are added to the VLAN management database.
+- **IP-based VLAN:** It used the mapping between the subnet ID and VLAN ID. Even if the NIC of the host changes, as long as the NIC's IP address remains unchanged, the switch can automatically set the VLAN ID corresponding to the subnet IP of the host.
+- **User-based VLAN:** The users determine the VLAN to which they belong through configurations on the software.
+
+**Versatile Routing Platform (VRP)**
+It's an operating system platform for data communication products, developed by **Huawei** to support all IP/ATM-based architectures.
+It implements multiple protocols.
+This is the VRP Architecture:
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/745f6a5b-3fce-4894-a2ad-9b1f5c940e5b)
+
+**How to configure and manage VLANs and VRP**
+**VLAN Lab Summary**
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/20861fcf-c22a-4471-8c2d-789a50d6aeb7)
+
+**Huawei VRP System Lab Summary**
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/49aa6cfe-da05-4514-b12e-6d6c18cc7069)
+
+
 
