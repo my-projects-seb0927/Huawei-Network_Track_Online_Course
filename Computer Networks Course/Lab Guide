@@ -1,0 +1,173 @@
+# Lab Guide - Computers Network Course
+
+**How to search information about the network devices**
+ 1. Go to <support.huawei.com>
+ 2. Click on the **Enterprise** button
+ 3. You can look for the device you are looking information for below where it says **"Enterprise Network"**.
+ 4. Once you have entered to a device, select the model of the device you are looking for
+ 5. Scroll down and you will see a tab called **"Documentation"**, click on it and from there you can search for the product documentation.
+ 6. Opening the *hdx* shows the documentation of the product. You can look the product where it says *"Chasis"* or the configuration on *"Configuration" > "CLI-based Configuration"*.
+ 
+> 💡 The software where the labs are done is called "eNSP".
+ 
+## Basic Operation of Huawei 
+ > 💡  This lab configures Huawei devices to learn about and get familiar with the basic operations of Huawei VRP
+ 
+### Topology
+[Imagen]
+ 
+In order to finish this lab, follow the next steps:
+### Step 1: Start the device
+ 1. Drag a *"Router"* to the board
+ 2. Start the device: Right-click on the Router > Start device.
+ 
+### Step 2: View Basic Device Information
+ 1. In order to access to the CLI of the router: Right-click on the Router > CLI. This is where all configuration is done.
+ 2. In order to see the device version information:
+	 ```
+	 <Huawei>display version
+	 ```
+
+### Step 3: Complete basic device configuration	
+ 
+ 1. Change the name of the router, entering to the **System view** to *"R1"*:
+	```
+	<Huawei>system-view
+	[Huawei]sysname R1
+	```
+ 2. Enter to the **Interface view **(Where we modify the ports of the router) and add an IP address:
+	```
+	[R1]interface g
+	[R1]interface GigabitEthernet0/0/0
+	[R1-GigabitEthernet0/0/0]
+	[R1-GigabitEthernet0/0/0] ip address 192.168.1.1 24
+	```
+	If you need to exit from an interface, type `quit` or `q` to a lower-level view.
+ 3. To get help from the system to remember a command:
+	```
+	[R1]i?
+	icmp
+	igmp-snooping
+	info-center
+	ip
+	ipv6
+	[...]
+	```
+ 4. To get help from the system to remember all the options from a command:
+	```
+	[R1-GigabitEthernet0/0/0] ip ?
+	address    Address
+	apply      Apply security policy
+	binding    Enable binding of an interface with a VPN instance
+	[...]
+	[R1-GigabitEthernet0/0/0] ip address ?
+	X.X.X.X     IP address
+	bootp-alloc IP address allocated by BOOTP
+	[...]
+	```
+5. Let's just set an IP address manually:
+	```
+	[R1-GigabitEthernet0/0/0] ip address 10.0.0.1 24
+	```
+9. If you need to display the running configuration in the current view, insert:
+	```
+	[R1-GigabitEthernet0/0/0] display this
+	[...]
+	[R1-GigabitEthernet0/0/0] display current-configuration
+	[...]
+	``` 
+	Let's remember that the devices support incomplete keyword input, for example, `dis cu` is equivalent `display current-configuration`. Finally, with *tab* you can auto-complete the commands if it's possible.
+6. Now we need to delete the IP address configuration of GigabitEthernet 0/0/0. This can be possible using the undo command:
+	```
+	[R1]interface GigabitEthernet 0/0/0
+	[R1-GigabitEthernet0/0/0] undo ip address
+	```
+	And if you display the information again with `display this`, it will be empty.
+
+### Step 4: Save the current device configuration
+1. In order to save the current device configuration:
+	```
+	<R1>save
+	```
+	> 💡 The save command saves the configuration to the default path and overwrite the original configuration file. 
+	You can also run it to save the current configuration to a specified file on the storage device.
+2. You can also compare the current configuration with the configuration used for the next startup:
+	```
+	<R1> compare configuration
+	```
+
+### Step 5: Operating the File System of the Device
+1. You can display the file list in the current directory:
+	```
+	<R1> dir
+	```
+	> 💡 **vrpcfg.zip:** Configuration file. Must be *.cgf* or *.zip* extension.
+	**ar651c-v300r019c00Sspc100.cc:** System software. Must be a.cc extension.
+2. Let's now save the current configuration but in another file:
+	```
+	<R1>save test.cfg
+	```
+	If you use the `dir` command again, you will see the *test.cfg* file there.
+3. Now with that file, you can set it to the configuration file used for the next startup
+	```
+	<R1>startup saved-configuration test.cfg
+	```
+4. And if you need to display the file used for the next startup:
+	```
+	<R1>display startup
+	```
+	> 💡 This commands displays the system software, backup system software, configuration file, license file, patch file, and voice file related to the current and next startup of the device.
+5. Finally, let's clear the configuration file:
+	```
+	<R1>reset saved-configuration
+	```
+### Step 6: Restart the device
+1. Let's restart the device:
+	```
+	<R1>reboot
+	```
+
+### Questions and Additional Contents
+- ¿In step 5, the reset saved-configuration command is used to clear the configuration. Why is the configuration still retained after the switch is restarted?
+	**Answer:** Because we set up the configuration file for the next startup in the same step.
+
+### Appendix
+|     **Function Keys**    |                             ** Function**                            |
+|:------------------------:|:--------------------------------------------------------------------:|
+| <Ctrl+A>                 | Moves the cursor to the beginning of the current line                |
+| <Ctrl+B>                 | Moves the cursor one character to the left                           |
+| <Ctrl+C>                 | Stop the currently executing function                                |
+| <Ctrl+D>                 | Deletes the character at the current cursor position                 |
+| <Ctrl+E>                 | Move the cursor to the end of the last line                          |
+| <Ctrl+F>                 | Moves the cursor one character to the right                          |
+| <Ctrl+H>                 | Deletes one character to the left of the cursor                      |
+| <Ctrl+K>                 | Terminate outgoing connections during connection establishment phase |
+| <Ctrl+N> or "Cusor"      | Displays the next command in the history command buffer.             |
+| <Ctrl+P> or arrow cursor | Displays the previous command in the history command buffer.         |
+| <Ctrl+T>                 | Enter the question mark "?"                                          |
+| <Ctrl+W>                 | Deletes a string (word) to the left of the cursor                    |
+| <Ctrl+X>                 | Deletes all characters to the left of the cursor                     |
+| <Ctrl+Y>                 | Deletes the cursor position and all characters to its right.         |
+| <Ctrl+Z>                 | Return to User View                                                  |
+| <Ctrl+]>                 | Terminating an Incoming Connection or Redirect Connection.           |
+| <Esc+B>                  | Moves the cursor one string (word) to the left.                      |
+
+## VLAN Technology Experiment
+ > 💡  This lab describes how to configure Huawei switches to learn about VLAN configurations.
+ 
+### Topology
+
+In order to finish this lab, follow the next steps:
+### Step 1: Start the devices
+
+### Step 2: Configure S1 and S2 device names
+
+### Step 3: Configure Host IP Addresses
+
+### Step 4: Creating VLANs
+
+### Step 5: Configuring Interface-based VLAN Classification
+
+### Step 6. Viewing Configuration Information
+
+### Result verification
