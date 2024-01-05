@@ -8,6 +8,7 @@ A computer network connects multiple computers through communication links to sh
 A computer network is a complex system that involves comprehensive technologies
 
 **What is a protocol**
+
 In order to achieve interconnection and interoperation, different system entities on the computer network must comply with mutually acceptable rules during communication. A set of these rules is called a **communication procedure** or **protocol**.
 
 Protocols must be formulated or agreed upon in advance so that the communication parties can understand the meaning of each other's information
