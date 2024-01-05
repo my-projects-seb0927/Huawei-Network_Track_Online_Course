@@ -163,7 +163,9 @@ In order to finish this lab, follow the next steps:
 In order to finish this lab, follow the next steps:
 ### Step 1: Start the devices
 1. Build the topology:
-	https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/7808ff30-418e-4391-bdeb-513efd1eacd3
+	
+ https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/7808ff30-418e-4391-bdeb-513efd1eacd3
+ 
 2. Start the devices. If the points are all green means that all the devies have started.
 
 ### Step 2: Configure S1 and S2 device names
@@ -176,10 +178,11 @@ In order to finish this lab, follow the next steps:
 
 ### Step 3: Configure Host IP Addresses
 1. Configure the IP addresses for PC1 (Double-click on the PC) and apply the changes:
+
 https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/57ee0a27-196e-44d7-9696-441567dd4e8a
 
 	> 💡 The subnet mask on the table is 24, which is translated to the Subnet Mask to 255.255.255.0. If it were 25, it would be 255.255.255.128 because remember that the subnet mask works in binary.
- Also, because they are in the same subnet, we do not need to set the gateway.
+ 	> Also, because they are in the same subnet, we do not need to set the gateway.
 
 2. Repeat the process for the rest of PCs. Use the table that is referred in the guide.
 
@@ -206,7 +209,7 @@ Basically, we need to configure every interfaces of the switches and set the def
  	[S1-GigabitEthernet0/0/1] port link-type access
 	```
  	> 💡 **Access ports (`access`):**
-  > - Belong to one VLAN.
+  	> - Belong to one VLAN.
 	> - Commonly used to connect computer ports.
 	> **Trunk ports (`trunk`):**
 	> - Allow multiple VLANs through.
