@@ -14,8 +14,9 @@
  > 💡  This lab configures Huawei devices to learn about and get familiar with the basic operations of Huawei VRP
  
 ### Topology
-[Imagen]
- 
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/b1097404-f664-467d-b36a-4b8ae7a24512)
+
+
 In order to finish this lab, follow the next steps:
 ### Step 1: Start the device
  1. Drag a *"Router"* to the board
@@ -69,7 +70,7 @@ In order to finish this lab, follow the next steps:
 	```
 	[R1-GigabitEthernet0/0/0] ip address 10.0.0.1 24
 	```
-9. If you need to display the running configuration in the current view, insert:
+6. If you need to display the running configuration in the current view, insert:
 	```
 	[R1-GigabitEthernet0/0/0] display this
 	[...]
@@ -77,7 +78,7 @@ In order to finish this lab, follow the next steps:
 	[...]
 	``` 
 	Let's remember that the devices support incomplete keyword input, for example, `dis cu` is equivalent `display current-configuration`. Finally, with *tab* you can auto-complete the commands if it's possible.
-6. Now we need to delete the IP address configuration of GigabitEthernet 0/0/0. This can be possible using the undo command:
+7. Now we need to delete the IP address configuration of GigabitEthernet 0/0/0. This can be possible using the undo command:
 	```
 	[R1]interface GigabitEthernet 0/0/0
 	[R1-GigabitEthernet0/0/0] undo ip address
@@ -153,21 +154,201 @@ In order to finish this lab, follow the next steps:
 | <Esc+B>                  | Moves the cursor one string (word) to the left.                      |
 
 ## VLAN Technology Experiment
- > 💡  This lab describes how to configure Huawei switches to learn about VLAN configurations.
+ > 💡 This lab describes how to configure Huawei switches to learn about VLAN configurations.
+> **Note from the author:** The teacher explaining the guide makes the connections on different ports, but the process is the same. Here I explain the proccess from the Guide Lab
  
 ### Topology
+![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/e0b43356-1a74-497a-a3aa-a4e1053ea979)
 
 In order to finish this lab, follow the next steps:
 ### Step 1: Start the devices
+1. Build the topology:
+	https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/7808ff30-418e-4391-bdeb-513efd1eacd3
+2. Start the devices. If the points are all green means that all the devies have started.
 
 ### Step 2: Configure S1 and S2 device names
+1. Open the Command Line Interface (CLI) of LSW1 and insert the next route of commands:
+	```
+	<Huawei> system-view
+ 	[Huawei] sysname S1
+	```
+2. Repeat the process for LSW2
 
 ### Step 3: Configure Host IP Addresses
+1. Configure the IP addresses for PC1 (Double-click on the PC) and apply the changes:
+https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/57ee0a27-196e-44d7-9696-441567dd4e8a
+
+	> 💡 The subnet mask on the table is 24, which is translated to the Subnet Mask to 255.255.255.0. If it were 25, it would be 255.255.255.128 because remember that the subnet mask works in binary.
+ Also, because they are in the same subnet, we do not need to set the gateway.
+
+2. Repeat the process for the rest of PCs. Use the table that is referred in the guide.
 
 ### Step 4: Creating VLANs
+1. Create VLANs 2 and 3 on S1:
+	```
+	[S1] vlan batch 2 to 3
+ 	```
+ 	What we are indicating here is to create vlans from number two to number three. So if we only needed one vlan, the command would be `vlan batch 2`
+
+2. Repeat the same command on S2
 
 ### Step 5: Configuring Interface-based VLAN Classification
+Basically, we need to configure every interfaces of the switches and set the default vlan of where the port is going to be
+
+**On S1**
+
+1. Go to the `g0/0/01` interface in order to configure the interfaces connecting S1 and S2 as **access** interfaces:
+	```
+ 	[S1] int g0/0/01
+ 	```
+2. Configure it as an access type interface:
+	```
+ 	[S1-GigabitEthernet0/0/1] port link-type access
+	```
+ 	> 💡 **Access ports (`access`):**
+  > - Belong to one VLAN.
+	> - Commonly used to connect computer ports.
+	> **Trunk ports (`trunk`):**
+	> - Allow multiple VLANs through.
+	> - Receive and send multiple VLAN packets.
+	> - Typically used for connection between switches.
+	> **Hybrid ports (`hybrid`):**
+	> - Allow multiple VLANs through
+	> - Receive and send multiple VLAN packets
+	> - Used for connection between switches, or switch and computer
+	> This website explains it in a good way! https://www.utepo.net/article/detail/Access-Port-vs-Trunk-Port-vs-Hybrid-Port.html
+
+3. And now let's set the default VLAN of that port:
+	```
+ 	[S1-GigabitEthernet0/0/1] port default vlan 2
+	```
+4. Let's do the same steps but for the `g0/0/2` interface:
+	```
+ 	[S1] interface GigabitEthernet0/0/2
+	[S1-GigabitEthernet0/0/2] port link-type access
+	[S1-GigabitEthernet0/0/2] port default vlan 3
+ 	```
+	> 💡 Remember that with `q`you can quit from an interface
+
+5. And finally for the `g0/0/10` interface, configure it as a trunk interface and allow only VLANs 2 and 3 to pass through:
+	```
+ 	[S1] interface GigabitEthernet0/0/10
+	[S1-GigabitEthernet0/0/10] port link-type trunk
+	[S1-GigabitEthernet0/0/10] port trunk allow-pass vlan 2 3
+ 	```
+
+6. Because of security reasons, the VLAN 1 is in the allowed list by default. **If it has no actual service usage, you nee to delete it for security purposes**:
+	```
+ 	[S1-GigabitEthernet0/0/10]undo port trunk allow-pass vlan 1
+ 	```
+	> 💡 The `undo port trunk allow-pass vlan` command deletes the VLAN to which a trunk interface is added
+
+**ON S2**
+Repeat the same steps:
+```
+[S2] int g0/0/14
+[S2-GigabitEthernet0/0/14] port link-type access
+[S2-GigabitEthernet0/0/14] port default vlan 3
+[S2-GigabitEthernet0/0/14] q
+[S2] int g0/0/2
+[S2-GigabitEthernet0/0/2] port link-type access
+[S2-GigabitEthernet0/0/2] port default vlan 2
+[S2-GigabitEthernet0/0/2] q
+[S2] int g0/0/10
+[S2-GigabitEthernet0/0/10] port link-type trunk
+[S2-GigabitEthernet0/0/10] port trunk allow-pass vlan 2 3
+```
 
 ### Step 6. Viewing Configuration Information
+You can display the VLAN information on a switch with:
+```
+[S1] display vlan
+```
+
+The output should look like this:
+```
+The total number of vlans is: 4
+---------------------------------------------------------------------------------------------------------------------
+U: Up; D: Down; TG: Tagged; UT: Untagged;
+MP: Vlan-mapping; ST: Vlan-stacking;
+#: ProtocolTransparent-vlan; *: Management-vlan;
+---------------------------------------------------------------------------------------------------------------------
+VID Type Ports
+----------------------------------------------------------------------------------------------------------------------
+1 common UT:GE0/0/2(D) GE0/0/3(D) GE0/0/4(D) GE0/0/5(D)
+GE0/0/6(D) GE0/0/7(D) GE0/0/8(D) GE0/0/9(D)
+GE0/0/11(D) GE0/0/12(D) GE0/0/14(D) GE0/0/15(D)
+GE0/0/16(D) GE0/0/17(D) GE0/0/18(D) GE0/0/19(D)
+GE0/0/20(D) GE0/0/21(D) GE0/0/22(D) GE0/0/23(D)
+GE0/0/24(D)
+2 common UT:GE0/0/1(U)
+TG:GE0/0/10(U)
+3 common UT:GE0/0/2(U)
+TG:GE0/0/10(U)
+VID Status Property MAC-LRN Statistics Description
+------------------------------------------------------------------------------------------------------------------------
+1 enable default enable disable VLAN 0001
+2 enable default enable disable VLAN 0002
+3 enable default enable disable VLAN 000
+```
+As you can see, where it says `"2 common"` and `"3 common"`, there you can see that the access interfaces and the trunk interfaces are working correctly
 
 ### Result verification
+It's only neccesary to check the connectivity of the devices and verify the VLAN configuration. You can follow the steps easily:
+1. Run the ping command on PC1 to verify that PC1 can ping PC4
+	```
+ 	PC> ping 10.1.3.4
+ 	```
+ 	and the output should say that there is not packet loss
+2. Run the ping command again on PC1 to verify if PC1 can ping PC2
+	```
+ 	PC> ping 10.1.3.2
+ 	```
+ 	and the output should say that there is packet loss
+
+### Configuration files
+
+#### Configuration of S1
+```
+sysname S1
+#
+vlan batch 2 to 3
+#
+interface GigabitEthernet0/0/1
+port link-type access
+port default vlan 2
+#
+interface GigabitEthernet0/0/2
+port link-type access
+port default vlan 3
+#
+interface GigabitEthernet0/0/10
+port link-type trunk
+undo port trunk allow-pass vlan 1
+port trunk allow-pass vlan 2 to 3
+#
+```
+
+#### Configuration of S2
+```
+sysname S2
+#
+vlan batch 2 to 3
+#
+interface GigabitEthernet0/0/1
+port link-type access
+port default vlan 2
+#
+interface GigabitEthernet0/0/10
+port link-type trunk
+undo port trunk allow-pass vlan 1
+port trunk allow-pass vlan 2 to 3
+#
+interface GigabitEthernet0/0/14
+port link-type access
+port default vlan 3
+#
+```
+
+
+
