@@ -3,6 +3,7 @@
 ## Basics of Computer Network
 
 **What is a computer network**
+
 A computer network connects multiple computers through communication links to share resource and deliver information.
 
 A computer network is a complex system that involves comprehensive technologies
@@ -14,6 +15,7 @@ In order to achieve interconnection and interoperation, different system entitie
 Protocols must be formulated or agreed upon in advance so that the communication parties can understand the meaning of each other's information
 
 **Classification of computer networks**
+
 This is how computer networks are classified:
 - **Based on the Networking Sharing Service Mode:**
 	- *Client/Server* (C/S) network
@@ -32,6 +34,7 @@ The reason because computer networks are divided in different layers is because 
 - Etc.
 
 **What is the OSI Model**
+
 The OSI model was created to establish an open Internet standard. This model divides the network structure into seven layers:
 - *The application layer:* Provides interfaces between network services and end users
 - *The presentation layer:* Provides functions such as data presentation, encryption/decryption, and compression/decompression.
@@ -43,7 +46,8 @@ The OSI model was created to establish an open Internet standard. This model div
 
 The first three ones are grouped into the **Application Layer** and then we hace the *Five-layer Internet Reference Model*.
 
-** What is Data Transition**
+**What is Data Transition**
+
 Data sending is achieved through a typical application data encapsulation process:
 1. The user data is encapsulated with the application layer header through the application layer protocol, resulting in the application data.
 2. The application data is encapsulated with a TCP header at the transport layer resulting in a packet **(Data segment)**.
@@ -59,6 +63,7 @@ It receives data unpacking data layer by layer starting from the Ethernet card. 
 ****
 ## Core Protocols
 **Computer network protocols**
+
 In a computer network, various specifications or protocols must be used to ensure secure, stable, and efficient running of the network. These protocols include the following types:
 
 - **Network node identification protocol**: It is used to identify network nodes. Some examples are MAC, IPv4, IPv6 and RFID.
@@ -67,6 +72,7 @@ In a computer network, various specifications or protocols must be used to ensur
 - **Network resource sharing protocol**: It is used to ensure that different organizations and individuals can share information. It includes HTTP, FTP, and SMTP.
 
 **Network node identity protocol**
+
 - A **LAN** uses a network hardware address or a MAC address to uniquely identify each network node.
 - A **WAN** that is formed by multiple interconnected LANs use a logical address, or an IP address to uniquely identify each network node
 
@@ -74,6 +80,7 @@ In a computer network, various specifications or protocols must be used to ensur
 
 
 **MAC address**
+
 To ensure that each node in a LAN can be uniquely identified, the IEEE stipulates that each node must have a unique network label. That's the MAC address
 > 💡 It is also called the LAN address, physical address, etc.
 
@@ -87,6 +94,7 @@ It is used to identify the identity or location of a network node. It's written 
 > Control Panel > Network > Local Area Connection Status > Details.
 
 **IP Address**
+
 In order to shield the differences between LANs, and in order to implement interconnection and interworking between different physical networks. IP address is an addressing method for allocating a unique address to each host on each subnet on the Internet.
 
 - An IP address consists of 32-bit binary number, which is usually divided into four bytes. *EX: 192.168.85.17*
@@ -111,6 +119,7 @@ They are classified into five types:
 > - The eight most significant bits are 01111111 indicating the loopback address, which is used for network software test and communication between local processes. The most common one is (127.0.0.1)
 
 **Differences betwen IP address and MAC address**
+
 |                       **IP address**                      |                       **MAC address**                       |
 |:---------------------------------------------------------:|:-----------------------------------------------------------:|
 |                     It can be changed                     |                     It cannot be changed                    |
@@ -121,6 +130,7 @@ They are classified into five types:
 
 ### HDLC Protocol & Zero Bit Insertion Technology
 **HDCL Protocol**
+
 It's called the *High-Level Data Link Control*. It's a bit-oriented data link control protocol which does not depend on any character set or code set. 
 It supports two transmissions:
 - **Asynchronous transmission:** Data is transmitted in bytes, and additional start and stop bits are used to mark the start and end of each byte.
@@ -140,6 +150,7 @@ Its structure goes like this:
 - ** Frame check field FCS:** This field is used to detect errors between two flags fields. The default value is 2 bytes, but it can be extended to 4 bytes for Ethernet. The cyclic redundancy check or CRC technology is used to detect errors from the first bit of the address field to the last bit of the information field. CRC, also known as polynomial code, is the most widely used and effective error control code in data link communication between LANs and WANs
 
 **How does Zero-Bit Insertion works**
+
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/e9b2e5de-f66c-4388-b9c9-4a6d470f6744)
 ### TCP/IP Protocol (1)
 It refers to the *Transmission Control Protocol* and the *Internet Protocol*. It's a connection-oriented, reliable and byte stream based transport layer communication protocol which is applicable to multiple network applications. It is network independent because it limits the packet length (A packet must be less than 64kb, if it is bigger, it needs to be fragmented).
@@ -147,6 +158,7 @@ It refers to the *Transmission Control Protocol* and the *Internet Protocol*. It
 - It enables communication between two processes but does not support BUM
 
 **IP**
+
 It includes three aspects:
 - IP addressing scheme
 - Packet encapsulation format
@@ -165,17 +177,20 @@ It includes three aspects:
 - **Sixth row:** It indicates the maximum segment size, or MSS option, which can be used only during connection establishment - The padding is used to ensure that the length of options is an integer multiple of 32 bits.
 
 **How does TCP/IP works**
+
 It works by connection establishment and release:
 - TCP Connection Setup.
 - TCP Connection Release.
 
 **TCP Connection process**
+
 >💡 The arrows are indicating the handshakes in order, being three in total
 
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/9aeb5e68-064f-48a3-a7c7-774be281728c)
 
 
 **TCP Control Traffic**
+
 - TCP flow control is used to overcome mismatches between the processing capabilites of the sender and receiver.
 - The simplest traffic control solution is that the receiver notifies the sender of its processing capabilites, and then the sender sends packets accordingly.
 - The window size field in a TCP packet is used to exchange the size of the receive window between the sender and receiver. This is because sometimes the receiver may have a slow cache, etc.
@@ -185,9 +200,12 @@ It works by connection establishment and release:
 > 💡 In order to solve that, TCP/IP uses the fast retransmit and recovery algorithm for avoiding losing packets when the network is working at his fullest.
 
 ### TCP/IP Protocol (2)
-**IP** (Network layer) provides connectionless packet transmission and is responsible only for transmitting packets to the destination node. It does not perform authentication or send acknowledgments to confirm whether the transmission is correct, nor does it ensure the correct sequence of packets. The reliability is implemented by TCP (Transport layer)
+**IP** 
+
+(Network layer) provides connectionless packet transmission and is responsible only for transmitting packets to the destination node. It does not perform authentication or send acknowledgments to confirm whether the transmission is correct, nor does it ensure the correct sequence of packets. The reliability is implemented by TCP (Transport layer)
 
 **Structure**
+
 It consists of:
 - **Packet header:** It stores the IP-specific control information
 - **Data area:** It contains upper-layer (TCP) data to be transmitted over IP.
@@ -212,6 +230,7 @@ It consists of:
  - **Payload**
 
 **IP Routing Protocol**
+
 On an IP network, routers select routes. By running certain routing protocols, a router searches for an optimal route to the destination host or network of an IP packet and forwards the packet.
 
 A routing protocol is a network protocol that specifies the packet forwarding mode. The router forwards the received data according to the routing table. The forwarding policy may be manually specified, for example, by using methods such as static routing and policy-based routing.
@@ -232,6 +251,7 @@ Most LANs adopt the bus structure. When a large number of network nodes share th
 
 
 **CSMA/CD protocol**
+
 It's a media access control (MAC) method for collision detection through carrier-sensing.
 
 >💡 **Working process:**
@@ -250,11 +270,13 @@ It's a media access control (MAC) method for collision detection through carrier
 
 ### Resource Search Engine and Web Service Agreement
 **World Wide Web, WWW**
+
 It is a global, dynamic, interactive, and cross-platform distributed graphics information system based on the HTTP. The Web uses a new browser/server (B/S) model, which is an improvement of the client/server (C/S) model.
 
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/9d47f651-8dfe-4123-a81b-0db56693e270)
 
 **Resource request process for Web services**
+
 1. A user enters a domain name in the address bar of the browser.
 2. DNS is used to resolve the domain name to obtain the IP address of the domain name.
 3. Based on the IP address, a Web application server is located and a TCP three-way handshake connection is initiated.
@@ -268,15 +290,18 @@ It is a global, dynamic, interactive, and cross-platform distributed graphics in
 
 ### Email Services
 **Model of an email service**
+
 In the email system, email senders and recipients are clients and use email proxies such as Hotmail and Foxmail to edit, send, and receive emails.
 
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/9921c79e-49e9-4944-8d98-18672a31d30f)
 
 **Typical Email Service Protocols**
+
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/04a6737a-1063-456b-ba8e-41db069c8c4c)
 
 ### IoT Concepts, Models, and Protocols
 **What is the Internet of things**
+
 - In 1998, MIT proposed a unique numbering scheme based on the radio frequency identification (RFID) technology, that is, the electronic product code (EPC).
 - In 1999, the MIT Auto-ID Lab first proposed the concept of IoT.
 - At that time, IoT was simply defined as an approach to the combine item coding, RFID, and Internet technologies to implement automatic identification and information sharing of items through the Internet.
@@ -284,6 +309,7 @@ In the email system, email senders and recipients are clients and use email prox
 But the general definition goes like this: IoT serves as a network that enables information sensing devices such as radio frequency identification (RFID) devices, infrared devices, GPS devices and laser scanners to connect any item to the Internet for information exchange and communication based on agreed protocols
 
 **RFID**
+
 RFID is a non-contact fully automatic identification technology. Its basic principle is to implement non-contact transmission of object information using the transmission feature of an electromagnetic signal and space coupling. This allows a static or moving object or person to be automatically identified in a non-contact manner.
 
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/499edcac-8bc3-47dc-be39-0ae929f663af)
@@ -292,6 +318,7 @@ RFID is a non-contact fully automatic identification technology. Its basic princ
 - **RFID reader:** It is a device that uses the radio frequency (RF) technology to read and write electronic tag information
 
 **RFID Reading Protocol**
+
 >💡 The most popular in terms of secure, is the hash-based security authentication protocol which encrypts messages using the hash algorithm. 
 
 An RFID reader uses a three-way handshake authentication protocol in the reading process. This is the **RFID Reading Process:**
@@ -305,6 +332,7 @@ By doing that, it's possible to determine that the established connection is rel
 To connect to devices on a LAN, a MAN, or a WAN, transmission media such as Ethernet cables or network interfaces (such as an RJ45) is generally used. These devices include intra-network (NICs, repeaters, hubs, and switches) and inter-network interconnection devices (Bridges, routers, and gateways).
 
 **Intra-network interconnection devices** 
+
 They include NICs, repeaters, hubs, and switches.
 
 - **NIC:** It's known as a network adapter, it connects a computer and a transmission medium to enable the computer to transmit data to another computer
@@ -322,6 +350,7 @@ There are three types of switches based on their positions on the network: *Acce
 
 
 **Types of network Switches**
+
 - **Access switch:** Directly connect user terminals to the network. They are inexpensive and have a high port density. In therms of transmission speed, most access switches provide multiple ports of 10 Mbit/s, 100 Mbit/s, or 1000 Mbit/s with auto-negotiation.
 - **Aggregation switch:** It aggregates traffic of multiple access switches between buildings. It must be able to process all traffic from access layer devices and provide uplinks to the core layer. Therefore, aggregation switches offer higher performance, fewer interfaces, and higher switching rates than access switches.
 - **Core switch:** It connects multiple aggregation switches to provide an optimized and reliable backbone transmission structure though high-speed forwarding communication. They have to have higher reliability, performance, and throughput.
@@ -338,6 +367,7 @@ It can screen or filter:
 It can isolate the information that does not need to be transmitted between networks, greatly reducing the network load and improving the network performance. It also has the ***Network Management function*** that can monitors the status of the extended network to better adjust the network topology. It cannot identify or filter broadcast information.
 
 **Router**
+
 The main difference between routing and switching is that switching occurs at the data link (Layer 2) whereas routing occurs on the Network layer (Layer 3).
 
 A router functions as a hub of the Internet. It's used to connect LAN and WAN devices on the internet. It automatically selects and sets routes based on channel conditions and sends signals along the optimal path in sequence
@@ -347,6 +377,7 @@ A router functions as a hub of the Internet. It's used to connect LAN and WAN de
 For protecting this routers, WPA, WPA2 and WPA3 are proposed.
 
 **Gateway**
+
 It's a computer system or device that functions as a conversion unit. It's a translator between two systems that use different communication protocols, data formats or languages, or even completely different architectures. It repackages the received information to meet the requirements of the destination system, and it can provide filtering and security functions.
 In a resume, they can:
 - Protocol conversion between networks.
@@ -357,6 +388,7 @@ In a resume, they can:
 ## Network Device Management and Configuration Methods
 
 **What is a network management**
+
 A network management is a network service that monitors, controls, and records:
 - The performance of network resources.
 - Usage of network resources.
@@ -370,9 +402,11 @@ It involves:
 Doing that, requirements of the network such as real-time running performance and service quality can be met at a reasonable cost.
 
 **Simple Network Management Protocol (SNMP)**
+
 It has become a *de facto* industry standard in the network management field and enjoys wide support and application. Most network managements systems and platforms use SNMP for management
 
 **Virtual Local Area Network (VLAN)**
+
 It's a logical segment for connecting network users to the ports of Layer 3 and Layer 2 switches, and ensures users are not restricted by their physical locations.
 They can be configured based on the user locations, functions, departments, or applications and protocols used by network users.
 It can be configured on a single switch or across switches. They are divided by two:
@@ -380,22 +414,27 @@ It can be configured on a single switch or across switches. They are divided by 
 - **Dynamic VLAN:** It refers to a VLAN that a switch automatically allocates to a host after it connects a port on the switch.
 
 **Dynamic VLAN**
+
 Dynamic VLANs can be configured on the following modes:
 - **MAC address-based VLAN:** The MAC addresses of all hosts are added to the VLAN management database.
 - **IP-based VLAN:** It used the mapping between the subnet ID and VLAN ID. Even if the NIC of the host changes, as long as the NIC's IP address remains unchanged, the switch can automatically set the VLAN ID corresponding to the subnet IP of the host.
 - **User-based VLAN:** The users determine the VLAN to which they belong through configurations on the software.
 
 **Versatile Routing Platform (VRP)**
+
 It's an operating system platform for data communication products, developed by **Huawei** to support all IP/ATM-based architectures.
 It implements multiple protocols.
 This is the VRP Architecture:
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/745f6a5b-3fce-4894-a2ad-9b1f5c940e5b)
 
 **How to configure and manage VLANs and VRP**
+
 **VLAN Lab Summary**
+
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/20861fcf-c22a-4471-8c2d-789a50d6aeb7)
 
 **Huawei VRP System Lab Summary**
+
 ![imagen](https://github.com/my-projects-seb0927/Huawei-Network_Track_Online_Course/assets/83418390/49aa6cfe-da05-4514-b12e-6d6c18cc7069)
 
 
