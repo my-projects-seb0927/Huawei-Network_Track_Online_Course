@@ -227,5 +227,5 @@ Aquí solo voy a poner los comandos del CLI:
   - FTP ✅
   - OSPF
 2. (Verdadero o falso) La conexión de datos la inicia el cliente en modo FTP activo.
-  - Verdadero
-  - Falso ✅
+  - Verdadero ✅
+  - Falso 
